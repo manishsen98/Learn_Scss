@@ -1,0 +1,141 @@
+/*
+ 1. variable
+*/
+
+$var-bg : yellow;
+$var-txt: white;
+$var-fnt-lg: 5rem;
+$var-fnt-sm: 3rem;
+
+body{
+    background-color: $var-bg;
+}
+
+h1{
+    color: $var-txt;
+    font-size: $var-fnt-lg;
+}
+@media screen and (max-width: 990px){
+    h1{
+        font-size: $var-fnt-sm;
+        &::before{
+            content: "hii";
+        }
+    }
+}
+
+/*
+ 2. Nesting
+*/
+
+header {
+    background-color: aquamarine;
+    h2{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    nav{
+        a{
+            color: white;
+            text-decoration: none;
+            border: 2px solid ;
+            &:hover{
+                background-color: darkblue;
+            }
+        }
+    }
+    button{
+        background-color: darkcyan;
+        color: white;
+        border: 2px solid black;
+        &:hover{
+            background-color: red;
+        }
+    }
+}
+
+/*
+ 3. opraters
+*/
+
+nav{
+    font-size: 20px * 2;
+}
+/*
+ 4. maps
+*/
+
+$font-size: ("mobile": 10px, "tablet": 20px, "desktop": 30px);
+
+h1{
+    font-size: map-get($map: $font-size, $key: "desktop");
+}
+@media screen and (max-width: 990px){
+    h1{
+        font-size: map-get($map: $font-size, $key: "mobile");
+    }
+}
+
+
+/*
+ 5.Ampersand -> &
+ Above Example add
+ */
+
+ /*
+ 6. Mixin  !important
+ */
+
+ @mixin flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+
+ @mixin flexbox($fd, $jc, $ai) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+ }
+
+ header{
+    background-color: aquamarine;
+    @include flexbox;
+ }
+
+
+ header{
+    background-color: aquamarine;
+    @include flexbox(column, center, space-between);
+ }
+
+ @media screen and (max-width: 900px) {
+    header{
+        @include flexbox(row, center, space-between);
+     }  
+ }
+
+  /*
+ 6. Extend
+ */
+
+ .button {
+    background-color: darkblue;
+    color: aqua;
+    border: 2px solid black;
+    padding: 10px 20px;
+ }
+ button{
+    @extend .button;
+    &:hover{
+        background-color: aquamarine;
+    }
+
+ }
+
+ /*
+  partials
+ */
+
+ same code so create partials file and when use this file..so need this import file;

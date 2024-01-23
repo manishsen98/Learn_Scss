@@ -1,0 +1,79 @@
+/*
+ 1. variable
+*/
+body {
+  background-color: yellow;
+}
+
+h1 {
+  color: white;
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 990px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h1::before {
+    content: "hii";
+  }
+}
+/*
+ 2. Nesting
+*/
+header {
+  background-color: aquamarine;
+}
+header h2 {
+  font-family: "Courier New", Courier, monospace;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid;
+}
+header nav a:hover {
+  background-color: darkblue;
+}
+header button {
+  background-color: darkcyan;
+  color: white;
+  border: 2px solid black;
+}
+header button:hover {
+  background-color: red;
+}
+
+/*
+ 3. opraters
+*/
+nav {
+  font-size: 40px;
+}
+
+/*
+ 4. maps
+*/
+h1 {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 990px) {
+  h1 {
+    font-size: 10px;
+  }
+}
+/*
+ 5.Ampersand -> &
+ Above Example add
+ */
+/*
+6. Mixin  !important
+*/
+header {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=index.css.map */
